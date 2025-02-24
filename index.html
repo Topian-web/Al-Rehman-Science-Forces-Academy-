@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Al Rehmaan Science and Forces Academy</title>
+  <style>
+    /* Animated Gradient Background for the Entire Page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.7;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    /* Header */
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      margin-bottom: 30px;
+      background: rgba(42, 95, 110, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    header p {
+      color: #e0e0e0;
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    /* Video Section */
+    .video-container {
+      width: 100%;
+      height: 400px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      object-fit: cover;
+    }
+    /* Slideshow Section */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      background: #000; /* fallback background */
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    /* Arrow Controls */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.3s;
+      user-select: none;
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 50%;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.6);
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+    /* Content Boxes */
+    .content-box, .contact-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    h2 {
+      color: #2d2d2d;
+      font-size: 1.8rem;
+      border-bottom: 3px solid #2d2d2d;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+      color: #444;
+    }
+    ul li:before {
+      content: "•";
+      color: #e74c3c;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #e74c3c;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .cta-button:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+    }
+    .program-card {
+      background: #f8f9fa;
+      border-left: 4px solid #e74c3c;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 5px;
+    }
+    /* Footer */
+    footer {
+      padding: 1.5rem;
+      background: #1a4450;
+      color: white;
+      border-radius: 10px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    footer li {
+      margin: 0.8rem 0;
+    }
+    .social-link {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .social-link:hover {
+      color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Al Rehmaan Science and Forces Academy</h1>
+      <p>Excellence in Scientific Education & Military Preparation</p>
+    </header>
+    
+    <!-- Video Section -->
+    <div class="video-container">
+      <!-- Autoplay enabled with mute (for browser compatibility) -->
+      <iframe src="https://www.youtube.com/embed/CPlbCzNXOcc?autoplay=1&mute=1&enablejsapi=1" 
+              title="YouTube video player" 
+              allow="autoplay; encrypted-media" 
+              allowfullscreen>
+      </iframe>
+    </div>
+    
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyGYQqK1x01a9kc-0WfpfZjOcDYtcq8qG-MQ&s" alt="Campus 1">
+      </div>
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdqSAUgIJWlMLSHaSf9CeRvHlrxOcGRnmuYA&s" alt="Campus 2">
+      </div>
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbXRRMIqMQXJB8N1GRGGKg9y-dDLzSmJ7LCg&s" alt="Campus 3">
+      </div>
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrd1Uo5tGz2aI6vC2l2C2ENG6L_-cIJyEIBA&s" alt="Campus 4">
+      </div>
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFHy3FV9_Fo7dEyPIekB7qIjGGd_winmEdNA&s" alt="Campus 5">
+      </div>
+      <div class="slide">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQTvfg-qolh0aBABKxYAvQDzp_dkHmOlnf2g&s" alt="Campus 6">
+      </div>
+      <!-- Arrow Controls -->
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+    
+    <!-- Additional Content -->
+    <div class="content-box">
+      <h2>Transform Your Future</h2>
+      <p>
+        Recognized as <strong>Sargodha's Leading Educational Institution</strong>, we provide comprehensive programs combining scientific education with strategic military preparation.
+      </p>
+      <a href="#" class="cta-button">Start Your Application</a>
+    </div>
+    <div class="content-box">
+      <h2>Our Distinctions</h2>
+      <ul>
+        <li>Military entrance exam success rate of 98%</li>
+        <li>State-of-the-art science laboratories</li>
+        <li>Comprehensive physical training regime</li>
+        <li>University-certified curriculum</li>
+        <li>Strategic exam preparation modules</li>
+      </ul>
+    </div>
+    <div class="content-box">
+      <h2>Academic Programs</h2>
+      <div class="program-card">
+        <h3>Forces Preparation Program</h3>
+        <p>Complete military entrance exam training with leadership development and physical conditioning.</p>
+      </div>
+      <div class="program-card">
+        <h3>Advanced Science Program</h3>
+        <p>Comprehensive STEM education with research opportunities and lab experience.</p>
+      </div>
+      <div class="program-card">
+        <h3>Academic Excellence Track</h3>
+        <p>Integrated curriculum combining core subjects with competitive exam strategies.</p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <h2>All Programs Now Enrolling</h2>
+      <p>Operating Hours: 8:00 AM - 6:00 PM (Mon-Sat)</p>
+      <p>Contact: 0300 620 4626</p>
+      <p>Address: City Stop, Sargodha, Punjab</p>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+      <h3>Join Us</h3>
+      <ul>
+        <li><a class="social-link" href="https://wa.me/923006204626" target="_blank">WhatsApp: 0300 620 4626</a></li>
+        <li><a class="social-link" href="https://www.facebook.com/p/Al-Rehman-forces-Academy-Sargodha-City-Stop-100083020435994/" target="_blank">Facebook: Al Rehman Forces Academy</a></li>
+        <li><a class="social-link" href="#" target="_blank">YouTube: ISSB Lovers</a></li>
+      </ul>
+    </footer>
+  </div>
+  
+  <script>
+    // Slideshow JavaScript
+    let slideIndex = 0;
+    const autoInterval = 3000; // 3 seconds per slide
+    const slides = document.querySelectorAll('.slideshow-container .slide');
+    
+    function showSlide(n) {
+      slides.forEach((slide, i) => {
+        slide.style.display = (i === n) ? 'block' : 'none';
+      });
+    }
+    
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+    
+    function prevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+    
+    showSlide(slideIndex);
+    let slideTimer = setInterval(nextSlide, autoInterval);
+    
+    document.querySelector('.next').addEventListener('click', () => {
+      nextSlide();
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextSlide, autoInterval);
+    });
+    
+    document.querySelector('.prev').addEventListener('click', () => {
+      prevSlide();
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextSlide, autoInterval);
+    });
+  </script>
+</body>
+</html>
